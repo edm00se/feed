@@ -1,0 +1,33 @@
+{
+  "name": "edm00se-feed",
+  "version": "1.0.5",
+  "description": "One centralized RSS feed for all of the content @edm00se creates across the web (aggregates from Twitter, RSS, Atom, Mastodon, YouTube)",
+  "main": "activityFeed.js",
+  "type": "module",
+  "scripts": {
+    "build": "run-s build:**",
+    "build:dir": "make-dir docs",
+    "build:feed": "node feed.js > docs/feed.rss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edm00se/feed.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edm00se/feed/issues"
+  },
+  "author": {
+    "name": "Eric McCormick",
+    "url": "https://edm00se.codes/"
+  },
+  "homepage": "https://github.com/edm00se/feed#readme",
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "dotenv": "^16.0.3",
+    "fast-xml-parser": "^4.0.11",
+    "make-dir-cli": "^3.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
