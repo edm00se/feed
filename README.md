@@ -1,5 +1,7 @@
 # feed
 
+## [feed.rss](https://edm00se.codes/feed/feed.rss)
+
 An implementation of [11ty/eleventy-activity-feed](https://github.com/11ty/eleventy-activity-feed) to provide a unified RSS feed of the goings on of @edm00se across each of:
 
 - [Mastodon](https://honk.farm/@eric) | [rss](https://honk.farm/users/eric.rss)
