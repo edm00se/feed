@@ -2,7 +2,7 @@ import { ActivityFeed } from "./activityFeed.js";
 
 let feed = new ActivityFeed();
 
-feed.setCacheDuration("4h");
+feed.setCacheDuration("15m");
 
 // YouTube
 feed.addSource("youtubeUser", "YouTube", "UC_vr254x82ZrrSFO6XgnWvg");
