@@ -13,6 +13,7 @@ feed.addSource("rss", "Misc Blog", "https://misc.edm00se.codes/feed.xml");
 
 // Mastodon
 feed.addSource("rss", "Mastodon", "https://honk.farm/users/eric.rss");
+feed.addSource("atom", "Pixelfed", "https://pixelfed.social/users/edm00se.atom");
 
 // Twitter
 //feed.addSource("twitterUser", "Twitter", "edm00se", "bearer-token");
