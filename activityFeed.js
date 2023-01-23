@@ -1,6 +1,5 @@
 import { YouTubeUserActivity } from "./src/YouTubeUserActivity.js";
 import { AtomActivity } from "./src/AtomActivity.js";
-import { PixelfedActivity } from "./src/PixelfedActivity.js";
 import { RssActivity } from "./src/RssActivity.js";
 import { TwitterUserActivity } from "./src/TwitterUserActivity.js";
 import pluginRss from "@11ty/eleventy-plugin-rss";
@@ -23,8 +22,6 @@ class ActivityFeed {
 			cls = YouTubeUserActivity;
 		} else if(type === "atom") {
 			cls = AtomActivity;
-		} else if(type === "pixelfed") {
-			cls = PixelfedActivity;
 		} else if(type === "rss") {
 			cls = RssActivity;
 		} else {

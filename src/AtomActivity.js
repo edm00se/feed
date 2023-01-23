@@ -28,7 +28,13 @@ class AtomActivity extends Activity {
 			},
 			published: entry.published || entry.updated,
 			updated: entry.updated,
+			content: entry.description ?? this.truncateContentToDescription(entry.content),
 		}
+	}
+
+	truncateContentToDescription(text) {
+		const sub = text.substring(0, 240);
+		return `${sub}${text.length > 240 ? '...' : ''}`;
 	}
 }
 
