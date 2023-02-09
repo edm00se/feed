@@ -6,9 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "run-s build:**",
-    "build:dir": "make-dir docs",
+    "build:dir": "make-dir docs/public",
     "build:feed": "node feed.js > docs/feed.rss",
-    "build:static": "cpy 'static/*' docs/"
+    "build:site": "npm run build --prefix static-reader",
+    "build:static": "cpy 'static-reader/dist/**/*' docs/",
+    "postinstall": "cd static-reader && npm ci"
   },
   "repository": {
     "type": "git",
