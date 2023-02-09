@@ -28,7 +28,7 @@ class AtomActivity extends Activity {
 			},
 			published: entry.published || entry.updated,
 			updated: entry.updated,
-			content: entry.description ?? this.truncateContentToDescription(entry.content),
+			content: entry.description ?? entry.content
 		}
 	}
 
