@@ -24,6 +24,8 @@
   main {
     font-family: sans-serif;
     text-align: center;
+    max-width: 100vw;
+    overflow-wrap: break-word;
   }
   :global(.item img) {
     max-width: 100%;
