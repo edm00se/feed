@@ -1,6 +1,6 @@
 {
   "name": "edm00se-feed",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "One centralized RSS feed for all of the content @edm00se creates across the web (aggregates from Twitter, RSS, Atom, Mastodon, YouTube)",
   "main": "activityFeed.js",
   "type": "module",

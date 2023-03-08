@@ -15,26 +15,38 @@ class AtomActivity extends Activity {
 	}
 
 	getEntriesFromData(data) {
-		return data.feed.entry;
+		if(Array.isArray(data.feed?.entry)) {
+			return data.feed.entry;
+		}
+
+		if(data.feed?.entry) {
+			return [data.feed.entry];
+		}
+
+		return [];
+	}
+
+	getUrlFromEntry(entry) {
+		if(this.isValidHttpUrl(entry.id)) {
+			return entry.id;
+		}
+		if(entry.link && entry.link["@_rel"] === "alternate" && entry.link["@_href"] && this.isValidHttpUrl(entry.link["@_href"])) {
+			return entry.link["@_href"];
+		}
+		return entry.id;
 	}
 
 	cleanEntry(entry, data) {
 		return {
 			type: "atom",
 			title: entry.title,
-			url: entry.id,
+			url: this.getUrlFromEntry(entry),
 			author: {
-				name: data.feed.author.name,
+				name: entry?.author?.name || data.feed?.author?.name,
 			},
 			published: entry.published || entry.updated,
 			updated: entry.updated,
-			content: entry.description ?? entry.content
 		}
-	}
-
-	truncateContentToDescription(text) {
-		const sub = text.substring(0, 240);
-		return `${sub}${text.length > 240 ? '...' : ''}`;
 	}
 }
 
