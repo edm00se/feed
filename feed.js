@@ -13,7 +13,7 @@ feed.addSource("rss", "Misc Blog", "https://misc.edm00se.codes/feed.xml");
 
 // Mastodon, Pixelfed
 feed.addSource("rss", "Mastodon", "https://hachyderm.io/users/edm00se.rss");
-feed.addSource("atom", "Pixelfed", "https://pixelfed.social/users/edm00se.atom");
+feed.addSource("pixelfed", "Pixelfed", "https://pixelfed.social/users/edm00se.atom");
 
 let content = await feed.toRssFeed({
 	title: "Eric McCormick's Activity Feed",
