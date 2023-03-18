@@ -12,7 +12,7 @@ feed.addSource("atom", "Blog", "https://edm00se.io/feed.atom"); // overrides ato
 feed.addSource("rss", "Misc Blog", "https://misc.edm00se.codes/feed.xml");
 
 // Mastodon, Pixelfed
-feed.addSource("rss", "Mastodon", "https://honk.farm/users/eric.rss");
+feed.addSource("rss", "Mastodon", "https://hachyderm.io/users/edm00se.rss");
 feed.addSource("atom", "Pixelfed", "https://pixelfed.social/users/edm00se.atom");
 
 let content = await feed.toRssFeed({
