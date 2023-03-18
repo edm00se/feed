@@ -8,7 +8,7 @@ feed.setCacheDuration("15m");
 feed.addSource("youtubeUser", "YouTube", "UC_vr254x82ZrrSFO6XgnWvg");
 
 // Blogs
-feed.addSource("atom", "Blog", "https://edm00se.io/feed.atom"); // overrides atom type due to missing description content
+feed.addSource("atom", "Blog", "https://edm00se.io/feed.atom");
 feed.addSource("rss", "Misc Blog", "https://misc.edm00se.codes/feed.xml");
 
 // Mastodon, Pixelfed

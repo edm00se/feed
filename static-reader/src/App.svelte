@@ -14,10 +14,6 @@
 		    throw new Error(text);
 		  }
 		}
-
-		function handleClick() {
-		  promise = getFeedContent();
-		}
 </script>
 
 <style>
