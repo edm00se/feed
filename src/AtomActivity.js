@@ -39,7 +39,7 @@ class AtomActivity extends Activity {
 	cleanEntry(entry, data) {
 		return {
 			type: "atom",
-			title: entry.title,
+			title: (entry.title['#text'] ?? entry.title),
 			url: this.getUrlFromEntry(entry),
 			author: {
 				name: entry?.author?.name || data.feed?.author?.name,
