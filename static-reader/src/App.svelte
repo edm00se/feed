@@ -1,19 +1,44 @@
 <script>
-  const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(
-		  "https://edm00se.codes/feed/feed.rss"
-		)}`;
-		let promise = getFeedContent();
+  const feedUrl = 'https://edm00se.codes/feed/feed.rss';
+	let promise = getFeedContent();
 
-		async function getFeedContent() {
-		  const res = await fetch(feedUrl);
-		  const text = await res.json();
+  function transformFeedData(data) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data, 'text/xml');
+    const items = [...xml.querySelectorAll('item')].map((el) => {
+      return {
+        link: el.querySelector('link').innerHTML,
+        title: el.querySelector('title').innerHTML,
+        content: el
+          .querySelector('description')
+          .innerHTML
+            .replaceAll('<!', '')
+            .replaceAll('-->', '')
+            .replaceAll('[CDATA[', '')
+            .replaceAll(']]>', '')
+      };
+    });
+    return {
+      ok: true,
+      items: items
+    }
+  }
 
-		  if (res.ok) {
-		    return text;
-		  } else {
-		    throw new Error(text);
-		  }
-		}
+  async function getFeedContent() {
+    let feedData = [];
+
+    const res = await fetch(feedUrl)
+      .then((response) => response.text())
+      .then((data) => transformFeedData(data))
+      .catch(err => console.error(err));
+
+    // console.log(res);
+    if (res.ok) {
+      return res;
+    } else {
+      throw new Error(text);
+    }
+  }
 </script>
 
 <style>
