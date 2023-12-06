@@ -1,6 +1,7 @@
 <script>
-  const feedUrl = 'https://edm00se.codes/feed/feed.rss';
-	let promise = getFeedContent();
+  const parm = new URLSearchParams(window.location.search);
+  const feedUrl = parm.get('url') ?? 'https://edm00se.codes/feed/feed.rss';
+  let promise = getFeedContent();
 
   function transformFeedData(data) {
     const parser = new DOMParser();
