@@ -1,7 +1,10 @@
 <script>
   const parm = new URLSearchParams(window.location.search);
   const feedUrl = parm.get('url') ?? 'https://edm00se.codes/feed/feed.rss';
-  let promise = getFeedContent();
+  let promise = fetch(feedUrl)
+    .then((response) => response.text())
+    .then((data) => transformFeedData(data))
+    .catch(err => console.error(err));
 
   function transformFeedData(data) {
     const parser = new DOMParser();
@@ -22,22 +25,6 @@
     return {
       ok: true,
       items: items
-    }
-  }
-
-  async function getFeedContent() {
-    let feedData = [];
-
-    const res = await fetch(feedUrl)
-      .then((response) => response.text())
-      .then((data) => transformFeedData(data))
-      .catch(err => console.error(err));
-
-    // console.log(res);
-    if (res.ok) {
-      return res;
-    } else {
-      throw new Error(text);
     }
   }
 </script>
