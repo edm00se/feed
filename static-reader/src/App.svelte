@@ -41,7 +41,7 @@
       console.log('matched value: ', itemHtml.match(ytRegEx));
       const ytVidId = getEmbedId(itemHtml.match(ytRegEx)[0]);
       console.log('found video id: ', ytVidId);
-      const ytEmbed = `<div class="youtube-embed">
+      const ytEmbed = `<div class="youtube-embed" style="width: 75vw; margin-left: auto; margin-right: auto;">
       <div style="width: '100%';">
           <div style="position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0;">
               <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
@@ -74,11 +74,6 @@
   :global(.item img) {
     max-width: 100%;
     max-height: 40em;
-  }
-  .youtube-embed {
-    width: 75vw;
-    margin-left: auto;
-    margin-right: auto;
   }
 </style>
 
