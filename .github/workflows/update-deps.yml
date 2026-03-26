@@ -9,6 +9,9 @@ concurrency:
 
 jobs:
   dep-upgrade:
+    permissions:
+      pull-requests: write
+      contents: write
     uses: edm00se/edm00se/.github/workflows/upgrade-deps.yml@master
     secrets: inherit
     with:
