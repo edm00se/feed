@@ -1,6 +1,6 @@
 # feed
 
-## [feed.rss](https://edm00se.codes/feed/feed.rss) | [viewer](https://edm00se.codes/feed/)
+## [feed.rss](https://edm00se.codes/feed/feed.rss) | [viewer](https://edm00se.codes/feed/) | [![Auto Feed Builder](https://github.com/edm00se/feed/actions/workflows/otto.yml/badge.svg)](https://github.com/edm00se/feed/actions/workflows/otto.yml)
 
 An implementation of [11ty/eleventy-activity-feed](https://github.com/11ty/eleventy-activity-feed) to provide a unified RSS feed of the goings on of @edm00se across each of:
 
